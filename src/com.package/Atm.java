@@ -5,19 +5,21 @@ public class Atm {
         this.bankAccount = BankAccount;
     }
 
-    void visualiseBalance() {
-        bankAccount.getBalance();
+    public void visualiseBalance() {
+        System.out.println("Your balance is: " + bankAccount.getBalance() + "\n");
     }
 
-    void depositToBalance(double value) {
+    public void depositToBalance(double value) {
         bankAccount.setBalance(bankAccount.getBalance() + value);
+        visualiseBalance();
     }
 
     void withDraw(double value) {
         if (value > bankAccount.getBalance()) {
-            System.out.println("The balance to withdraw is major that your balance");
+            System.out.println("Balance insufficient \n");
         } else {
             bankAccount.setBalance(bankAccount.getBalance() - value);
+            visualiseBalance();
         }
     }
 }

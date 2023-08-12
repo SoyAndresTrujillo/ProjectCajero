@@ -18,20 +18,19 @@ public class Main {
             int input = sc.nextInt();
 
             switch (input) {
-                case 1 -> System.out.println("Your balance is: " + bankAccount.getBalance() + "\n");
+                case 1 -> atm.visualiseBalance();
                 case 2 -> {
                     System.out.println("Digit value to deposit");
-                    double inputValue = sc.nextDouble();
-                    atm.depositToBalance(inputValue);
-                    System.out.println("Your balance now is: " + bankAccount.getBalance() + "\n");
+                    atm.depositToBalance(sc.nextDouble());
                 }
                 case 3 -> {
                     System.out.println("Digit value to withdraw");
-                    double inputValueWithdraw = sc.nextDouble();
-                    atm.withDraw(inputValueWithdraw);
-                    System.out.println("Your balance now is: " + bankAccount.getBalance() + "\n");
+                    atm.withDraw(sc.nextDouble());
                 }
-                case 4 -> System.exit(0);
+                case 4 -> {
+                    System.out.println("See you later 🥳");
+                    System.exit(0);
+                }
                 default -> System.out.println("Invalid option 😒" + "\n");
             }
         }
